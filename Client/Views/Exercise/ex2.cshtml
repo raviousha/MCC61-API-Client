@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Excercise 2: PokéAPI";
+    Layout = "_LayoutAdmin";
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="container-fluid">
+            <h1 class="display-4">Pokémon Dex</h1>
+            <table class="table text">
+                <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="text-capitalize" id="pokeTable">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="pokeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content modal">
+            <div class="modal-header bg-danger border-dark">
+                <h4 class="modal-title text-light" id="exampleModalLabel">Pokémon Details</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center" id="pokeModalBody">
+                <div class="row">
+                    <div class="col-sm text-capitalize" id="column-title">
+                        title
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-3" id="column-1">
+                        <h4 class="lead">Information</h4>
+                        <table class="table" id="infoTable">
+                        </table>
+                        <br>
+                        <h4 class="lead">Stats</h4>
+                        <table class="table" id="statTable">
+                        </table>
+                    </div>
+                    <div class="col-6" id="column-2">
+                    </div>
+                    <div class="col-3" id="column-3">
+                        <h4 class="lead">Abilities</h4>
+                        <table class="table" id="abilityTable">
+                        </table>
+                        <br>
+                        <h4 class="lead">Top 5 Moves</h4>
+                        <table class="table" id="moveTable">
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer bg-danger border-dark">
+                <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript" src="~/js/Pokemon.js"></script>
+}

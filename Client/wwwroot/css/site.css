@@ -1,0 +1,182 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Zen%20Maru%20Gothic&display=swap');
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: cornflowerblue;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    font-size: medium;
+    background-color: #434247;
+    /*margin-bottom: 60px;
+    color: ivory;*/
+    font-family: 'Zen Maru Gothic';
+}
+
+header{
+    position: sticky;
+    top: 0;
+    z-index:99;
+}
+
+.footer {
+    position: fixed;
+    background-color: #013030;
+    font-weight:bold;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+.display-excercise {
+    position: relative;
+    margin: 10px;
+    display: block;
+    width: 1000px;
+    height: 500px;
+    margin: auto;
+    text-align: center;
+    height: auto;
+    color: #519259;
+    background-color: #013030;
+    border: 5px solid #024E4E;
+    border-radius: 2px;
+}
+
+div.relative {
+    background-color: #0F5855;
+    margin-top: 10px;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+div.table-data {
+    background-color: gainsboro;
+    margin-top: 10px;
+    position: relative;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.mainTableBody {
+    background-color: #036666;
+}
+
+div.fixed {
+    text-align: center;
+    bottom: 75px;
+    right: 10px;
+    left: 10px;
+    position: fixed;
+    color: mediumaquamarine;
+    background-color: darkslategrey;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+div.sticky {
+    top: 0;
+    margin: 10px;
+    position: sticky;
+    text-align: center;
+    color: mediumaquamarine;
+    background-color: #31072e;
+}
+
+#btn-bg{
+    position: absolute;
+    margin: auto;
+    bottom: 25px;
+    right: 40px;
+}
+
+.contents{
+    display: block;
+    margin: auto;
+    width: 1000px;
+}
+
+.content-detail{
+    margin-left: 30px;
+    text-align: left;
+    color: ivory;
+}
+
+.content-detail::first-line{
+    color: yellow;
+}
+
+#img-main{
+    height: 75%;
+    width: 75%;
+    margin: 10px;
+    border-radius: 4px;
+}
+
+.img-pokemon {
+    height: 400px;
+    width: 400px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    -webkit-filter: drop-shadow(10px 10px 10px #222);
+    filter: drop-shadow(10px 10px 10px #222);
+}

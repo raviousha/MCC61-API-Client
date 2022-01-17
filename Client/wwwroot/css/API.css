@@ -1,0 +1,28 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Zen%20Maru%20Gothic&display=swap');
+
+body {
+    background-color: white;
+}
+
+h1 {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-family: 'Zen Maru Gothic';
+    color: #036666;
+}
+
+tbody {
+    color: #036666;
+}
+
+.btn-add {
+    font-family: 'Zen Maru Gothic';
+    margin-bottom: 10px;
+}
+
+
+
+.chart {
+    max-width: 650px;
+    margin: 35px auto;
+}

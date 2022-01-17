@@ -1,0 +1,186 @@
+﻿@{
+    ViewData["Title"] = "Excercise 3: Registered Data";
+    Layout = "_LayoutAdmin";
+    <link rel="stylesheet" href="~/css/API.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css" />
+}
+
+<div class="container-fluid">
+    <h1 class="text-xl-center">Registered Data</h1>
+    <button class="btn btn-primary btn-add" data-toggle="modal" data-target="#insertModal"><i class="fas fa-plus"></i><i> </i>Add Data</button>
+    <table class="table" id="EmployeeTable">
+        <thead class="text-center">
+            <tr>
+
+                <th scope="col">No.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Email</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+        </tbody>
+    </table>
+</div>
+<div id="chart">
+</div>
+
+<div class="modal fade" id="insertModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content modal">
+            <div class="modal-header border-dark bg-dark">
+                <h5 class="modal-title text-light" id="exampleModalLabel">Add Data</h5>
+                <button type="button" class="close" data-dismiss="modal" onClick="" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-dark" id="insertModalBody">
+                <form onsubmit="return false" class="needs-validation" id="registerForm" oninput='p2.setCustomValidity(p2.value != p1.value ? "Passwords do not match." : "")'>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col">
+                                <label for="firstName">First Name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="First name" required>
+                                <div class="valid-feedback">Valid.</div>
+                                <div class="invalid-feedback">Please fill out this field.</div>
+                            </div>
+                            <div class="col">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Last name" required>
+                                <div class="invalid-feedback">Please fill out this field.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col">
+                                <label for="genderSelect">Gender</label>
+                                <select class="form-control" id="genderSelect" required>
+                                    <option value="">Select Gender</option>
+                                    <option value=0>Laki-laki</option>
+                                    <option value=1>Perempuan</option>
+                                </select>
+                                <div class="invalid-feedback">Please Select Gender</div>
+                            </div>
+                            <div class="col">
+                                <label for="birthDate">Birth Date</label><br />
+                                <div class="input-group">
+                                    <input type="date" class="form-control" id="birthDate" required>
+                                    <div class="invalid-feedback">
+                                        Please fill out this field.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <label for="phoneInput">Phone</label>
+                                <input type="text" class="form-control" id="phoneInput" placeholder="xxxx-xxxx-xxxx" required>
+                                <div class="invalid-feedback">Please fill out this field.</div>
+                            </div>
+                            <div class="col">
+                                <label for="emailInput">Email address</label>
+                                <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
+                                <div class="invalid-feedback">Please fill out this field.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="salaryInput">Salary</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend">Rp.</span>
+                            </div>
+                            <input type="number" class="form-control" id="salaryInput" placeholder="Salary" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Please fill out this field.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <label for="passwordInput">Password</label>
+                                <input type="password" class="form-control" id="passwordInput" name="p1" placeholder="password" required>
+                                <div class="invalid-feedback">Please fill out this field.</div>
+                            </div>
+                            <div class="col">
+                                <label for="confirmInput">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmInput" name="p2" placeholder="confirm password" required>
+                                <div class="invalid-feedback">
+                                    Password not a match.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <label for="uniSelect">University</label>
+                                <select class="form-control" id="uniSelect" required>
+                                    <option value="">Select University</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="degreeInput">Degree</label>
+                                <input type="text" class="form-control" id="degreeInput" placeholder="degree" required>
+                                <div class="invalid-feedback">Please fill out this field.</div>
+                            </div>
+                            <div class="col">
+                                <label for="gpaInput">GPA</label>
+                                <input type="number" step="0.01" class="form-control" id="gpaInput" placeholder="GPA" required>
+                                <div class="invalid-feedback">Please fill out this field.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align:right">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="employeeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content modal">
+            <div class="modal-header bg-dark border-dark">
+                <h4 class="modal-title text-light" id="exampleModalLabel">Employee Details</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center" id="employeeModalBody">
+                <div class="row">
+                    <div class="col-sm text-capitalize" id="column-title">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <table class="table" id="infoTable">
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer bg-dark border-dark">
+                <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript" src="~/js/API.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.1.0/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.1.0/js/buttons.print.min.js"></script>
+}
